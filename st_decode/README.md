@@ -19,19 +19,51 @@ The original files use multiple layers of obfuscation:
 ```
 st_decode/
 └── scripts/
-    ├── auth/
-    │   ├── auth-service.decoded.js      # Main authentication service
-    │   ├── auth-ui.decoded.js           # UI components for auth
+    ├── auth/                           # Authentication module (6 files)
+    │   ├── auth-service.decoded.js
+    │   ├── auth-ui.decoded.js
     │   └── wasm/
-    │       ├── wasm-module-loader.decoded.js        # WASM module loader
-    │       ├── auth-wasm-wrapper-loader.decoded.js  # WASM wrapper loader
-    │       ├── auth-wasm-wrapper.decoded.js         # WASM bridge
+    │       ├── wasm-module-loader.decoded.js
+    │       ├── auth-wasm-wrapper-loader.decoded.js
+    │       ├── auth-wasm-wrapper.decoded.js
     │       └── pkg/
-    │           └── auth_wasm.decoded.js             # WASM glue code
-    └── autofill/
-        ├── autofill.decoded.js          # Form autofill functionality
-        └── random-generator.decoded.js  # Random data generation
+    │           └── auth_wasm.decoded.js
+    ├── autofill/                       # Autofill module (2 files)
+    │   ├── autofill.decoded.js
+    │   └── random-generator.decoded.js
+    ├── background/                     # Background script (1 file)
+    │   └── background.decoded.js
+    ├── content/                        # Content scripts (3 files)
+    │   ├── stripe-content.decoded.js
+    │   ├── dashboardBlur.decoded.js
+    │   └── emailBlur.decoded.js
+    ├── crypto/                         # Cryptography (2 files)
+    │   ├── crypto-js.min.decoded.js
+    │   └── encryption-utils.decoded.js
+    ├── data/                           # Data injection (1 file)
+    │   └── datainjector.decoded.js
+    ├── fingerprint/                    # Browser fingerprinting (2 files)
+    │   ├── fingerprint.decoded.js
+    │   └── fingerprint-wrapper.decoded.js
+    ├── gateways/                       # Payment gateways (4 files)
+    │   ├── billvoice/
+    │   │   ├── billvoicecontent.decoded.js
+    │   │   └── injectbillvoice.decoded.js
+    │   └── stripe/
+    │       ├── paymentcontent.decoded.js
+    │       └── injectpayment.decoded.js
+    ├── hcaptcha/                       # hCaptcha integration (1 file)
+    │   └── hcaptcha.bundle.decoded.js
+    ├── logging/                        # Logging utilities (1 file)
+    │   └── checkout-logger.decoded.js
+    ├── responses/                      # Response interception (1 file)
+    │   └── responseinterceptor.decoded.js
+    └── settings/                       # Settings management (2 files)
+        ├── settings.decoded.js
+        └── screenshotKeybind.decoded.js
 ```
+
+**Total: 26 decoded files**
 
 ## File Descriptions
 
