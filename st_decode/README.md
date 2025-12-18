@@ -1,6 +1,6 @@
-# ST Decode - Authentication Module Analysis
+# ST Decode - Obfuscated JavaScript Analysis
 
-This folder contains decoded/analyzed versions of the obfuscated JavaScript files from `st/scripts/auth`.
+This folder contains decoded/analyzed versions of the obfuscated JavaScript files from `st/scripts/`.
 
 ## Obfuscation Techniques Identified
 
@@ -19,15 +19,18 @@ The original files use multiple layers of obfuscation:
 ```
 st_decode/
 └── scripts/
-    └── auth/
-        ├── auth-service.decoded.js      # Main authentication service
-        ├── auth-ui.decoded.js           # UI components for auth
-        └── wasm/
-            ├── wasm-module-loader.decoded.js        # WASM module loader
-            ├── auth-wasm-wrapper-loader.decoded.js  # WASM wrapper loader
-            ├── auth-wasm-wrapper.decoded.js         # WASM bridge
-            └── pkg/
-                └── auth_wasm.decoded.js             # WASM glue code
+    ├── auth/
+    │   ├── auth-service.decoded.js      # Main authentication service
+    │   ├── auth-ui.decoded.js           # UI components for auth
+    │   └── wasm/
+    │       ├── wasm-module-loader.decoded.js        # WASM module loader
+    │       ├── auth-wasm-wrapper-loader.decoded.js  # WASM wrapper loader
+    │       ├── auth-wasm-wrapper.decoded.js         # WASM bridge
+    │       └── pkg/
+    │           └── auth_wasm.decoded.js             # WASM glue code
+    └── autofill/
+        ├── autofill.decoded.js          # Form autofill functionality
+        └── random-generator.decoded.js  # Random data generation
 ```
 
 ## File Descriptions
@@ -73,6 +76,33 @@ wasm-bindgen generated glue code:
 - Memory management
 - Import/export bindings
 - RSA fallback implementation
+
+---
+
+## Autofill Module
+
+### autofill/autofill.decoded.js
+Main autofill functionality:
+- `generateCardNumber()` - Random card number generation
+- `generateRandomIdentity()` - Random identity data
+- `clearFormFields()` - Clear form fields
+- `populateIdentityFields()` - Fill form with identity
+- `fillField()` - Fill single form field
+- Form field selectors configuration
+- Message event handlers
+- URL change observer
+
+### autofill/random-generator.decoded.js
+Random data generation utilities:
+- `getFirstNames()` - First names list
+- `getLastNames()` - Last names list
+- `generateNameCombinations()` - Full name combinations
+- `generateRandomName()` - Random name selection
+- `generateLocaleData()` - Locale-specific data
+- Country codes mapping (50+ countries)
+- Name gender mapping
+
+---
 
 ## Key Findings
 
