@@ -19,14 +19,32 @@ The obfuscated JavaScript files use multiple layers of obfuscation:
 ```
 st_decode/
 ├── README.md                           # This file
+├── FOLDER_STRUCTURE_DIAGRAM.md         # Folder structure diagram
+├── package.json                        # Package config
+├── package-lock.json                   # Package lock
 ├── uuidWithExpiry.decoded.js           # UUID with expiry (readable)
 ├── manifest.decoded.json               # Extension manifest analysis
 ├── rules.decoded.json                  # Network rules analysis
 ├── settings.decoded.html               # Settings page analysis
 ├── assets/
+│   ├── images/                         # Image assets (5 files)
+│   │   ├── Nazi.png
+│   │   ├── book_128x128.png
+│   │   ├── book_16x16.png
+│   │   ├── book_32x32.png
+│   │   └── book_48x48.png
+│   ├── sounds/                         # Sound assets (2 files)
+│   │   ├── autohitter.mp3
+│   │   └── hit_sound.mp3
 │   └── styles/
 │       ├── customStripeStyles.decoded.css  # Stripe CSS (full code)
 │       └── settings.decoded.css            # Settings CSS (full code)
+├── dist/                               # WASM files (2 files)
+│   ├── ort-wasm-simd-threaded.jsep.wasm
+│   └── ort-wasm-simd-threaded.wasm
+├── models/                             # ML models (2 files)
+│   ├── mobileone-s0.ort
+│   └── nms-yolov5-det.ort
 └── scripts/
     ├── auth/                           # Authentication module (6 files)
     │   ├── auth-service.decoded.js
@@ -72,12 +90,15 @@ st_decode/
         └── screenshotKeybind.decoded.js
 ```
 
-**Total: 32 decoded files**
+**Total: 47 files in st_decode/**
 - 26 JavaScript files (scripts/)
 - 4 configuration files (manifest, rules, settings.html, uuidWithExpiry)
 - 2 CSS files (assets/styles/)
-
-**Note:** Binary files (images, sounds, WASM, ML models) are not decoded as they are not code files.
+- 4 package/doc files (README, FOLDER_STRUCTURE_DIAGRAM, package.json, package-lock.json)
+- 5 image files (assets/images/)
+- 2 sound files (assets/sounds/)
+- 2 WASM files (dist/)
+- 2 ML model files (models/)
 
 ## Non-Script Files Analysis
 
