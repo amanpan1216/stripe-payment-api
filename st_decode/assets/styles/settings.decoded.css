@@ -1,0 +1,167 @@
+/**
+ * DECODED ANALYSIS: settings.css
+ * 
+ * Main stylesheet for the extension settings page.
+ * 
+ * This is NOT obfuscated - it is standard CSS.
+ * 
+ * PURPOSE: Styles the settings.html options page
+ */
+
+/**
+ * THEME COLORS
+ * ------------
+ * - Background: Dark gradients (rgba(30,30,35,0.9) to rgba(20,20,25,0.9))
+ * - Accent: Blue (#1a73e8, rgba(26,115,232,...))
+ * - Text: White with varying opacity
+ * - Borders: rgba(255,255,255,0.1)
+ */
+
+/**
+ * CSS VARIABLES (from var() usage)
+ * --------------------------------
+ * --shadow-heavy: Heavy drop shadow for depth
+ */
+
+/**
+ * LAYOUT COMPONENTS
+ * -----------------
+ * 
+ * .vertical-menu:
+ *   - Vertical navigation menu
+ *   - Hidden by default (opacity: 0, visibility: hidden)
+ *   - Becomes visible with .visible class
+ *   - On mobile: Slides in from left (40% width)
+ * 
+ * .content-container:
+ *   - Main content area
+ *   - Fixed positioning, centered
+ *   - 380px width, 75vh max-height
+ *   - Hidden by default, shown with .visible
+ * 
+ * .menu-item:
+ *   - Navigation buttons
+ *   - Gradient background
+ *   - Hover effects with transform and shadow
+ */
+
+/**
+ * RESPONSIVE BREAKPOINTS
+ * ----------------------
+ * 
+ * @media (max-width: 768px):
+ *   - Menu becomes slide-out drawer (40% width)
+ *   - Content container full width
+ *   - Z-index adjustments for layering
+ * 
+ * @media (max-width: 480px):
+ *   - Menu width reduced to 35%
+ *   - Smaller padding and font sizes
+ *   - Content area 65% width
+ */
+
+/**
+ * INTERACTIVE ELEMENTS
+ * --------------------
+ * 
+ * .copy-card-btn:
+ *   - Copy button for card data
+ *   - Appears on hover (.hit-log:hover)
+ *   - Blue accent color
+ *   - Circular shape (28px)
+ * 
+ * .copy-all-btn:
+ *   - Copy all button
+ *   - Gradient background
+ *   - Hover animation (shine effect)
+ * 
+ * .menu-close-btn:
+ *   - Close button for menu
+ *   - Circular (36px)
+ *   - Blue accent border
+ *   - Hover: Scale and glow
+ * 
+ * .blur-toggle-btn:
+ *   - Eye icon toggle
+ *   - Shows/hides sensitive data
+ *   - Blue when active
+ */
+
+/**
+ * SPECIAL EFFECTS
+ * ---------------
+ * 
+ * .blur-sensitive:
+ *   - filter: blur(6px)
+ *   - user-select: none
+ *   - Prevents copying blurred content
+ * 
+ * Gradient backgrounds:
+ *   - linear-gradient(145deg, ...)
+ *   - Creates depth and modern look
+ * 
+ * Transitions:
+ *   - all 0.3s ease (standard)
+ *   - all 0.3s cubic-bezier(0.4, 0, 0.2, 1) (smooth easing)
+ * 
+ * Hover transforms:
+ *   - translateY(-2px): Lift effect
+ *   - scale(1.1): Enlarge
+ */
+
+/**
+ * SETTINGS SECTIONS
+ * -----------------
+ * 
+ * .settings-section:
+ *   - Container for settings groups
+ *   - Overflow-y: auto for scrolling
+ *   - Max-height for containment
+ * 
+ * .section-title:
+ *   - Section headers
+ *   - 18px font on desktop, 16px mobile
+ * 
+ * .input-with-tooltip:
+ *   - Input containers with help text
+ *   - Responsive sizing
+ */
+
+/**
+ * INPUT ELEMENTS
+ * --------------
+ * 
+ * #bin-input, #card-list-input, #proxy-input:
+ *   - Textarea inputs
+ *   - Min-height: 100px (80px on small screens)
+ *   - Full width on mobile
+ * 
+ * .main-button:
+ *   - Primary action buttons
+ *   - Padding: 10px 15px
+ *   - Responsive sizing
+ */
+
+/**
+ * Z-INDEX HIERARCHY
+ * -----------------
+ * 
+ * 1000001: .menu-close-btn (highest)
+ * 1000000: .vertical-menu (mobile)
+ * 999999: .content-container, .settings-section
+ * 100: .vertical-menu (default)
+ * 10: .copy-card-btn
+ */
+
+/**
+ * HIT LOGS STYLING
+ * ----------------
+ * 
+ * .hit-log:
+ *   - Individual log entry
+ *   - Position: relative for button positioning
+ * 
+ * .hit-logs-actions:
+ *   - Container for action buttons
+ *   - Flexbox with gap
+ */

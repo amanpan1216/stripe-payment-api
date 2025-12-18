@@ -1,10 +1,10 @@
-# ST Decode - Obfuscated JavaScript Analysis
+# ST Decode - Complete Extension Analysis
 
-This folder contains decoded/analyzed versions of the obfuscated JavaScript files from `st/scripts/`.
+This folder contains decoded/analyzed versions of all files from the `st/` extension folder.
 
 ## Obfuscation Techniques Identified
 
-The original files use multiple layers of obfuscation:
+The obfuscated JavaScript files use multiple layers of obfuscation:
 
 1. **LZString Compression**: String literals are compressed using LZString library
 2. **Custom Base-91 Encoding**: Each function uses a unique alphabet for decoding
@@ -18,6 +18,23 @@ The original files use multiple layers of obfuscation:
 
 ```
 st_decode/
+├── README.md                           # This file
+├── uuidWithExpiry.decoded.js           # UUID with expiry (readable)
+├── manifest.decoded.json               # Extension manifest analysis
+├── rules.decoded.json                  # Network rules analysis
+├── settings.decoded.html               # Settings page analysis
+├── assets/
+│   ├── images/
+│   │   └── README.md                   # Image assets documentation
+│   ├── sounds/
+│   │   └── README.md                   # Sound assets documentation
+│   └── styles/
+│       ├── customStripeStyles.decoded.css  # Stripe CSS analysis
+│       └── settings.decoded.css        # Settings CSS analysis
+├── dist/
+│   └── README.md                       # WASM files documentation
+├── models/
+│   └── README.md                       # ML models documentation
 └── scripts/
     ├── auth/                           # Authentication module (6 files)
     │   ├── auth-service.decoded.js
@@ -63,9 +80,78 @@ st_decode/
         └── screenshotKeybind.decoded.js
 ```
 
-**Total: 26 decoded files**
+**Total: 36 decoded/analyzed files**
+- 26 JavaScript files (scripts/)
+- 4 configuration files (manifest, rules, settings.html, uuidWithExpiry)
+- 2 CSS files (assets/styles/)
+- 4 documentation READMEs (dist/, models/, images/, sounds/)
 
-## File Descriptions
+## Non-Script Files Analysis
+
+### Root Files
+
+#### uuidWithExpiry.decoded.js
+UUID generation with fingerprint binding:
+- `generateUUIDWithExpiry(fp, days)` - Create UUID with expiry
+- `isValid(token, currentFp)` - Validate token
+- `fingerprintHash(fp)` - SHA-256 hash of fingerprint
+- `canonicalize(value)` - Stable JSON serialization
+
+#### manifest.decoded.json
+Chrome Extension Manifest V3 analysis:
+- Permissions and host permissions
+- Content script injection rules
+- Background service worker config
+- Web accessible resources
+
+#### rules.decoded.json
+Declarative Net Request rules:
+- reCAPTCHA language override
+- CSP modification for Stripe pages
+
+#### settings.decoded.html
+Settings page structure:
+- Mode selection (Autohit/Bypass)
+- Dashboard layout
+- Telegram integration
+- Real-time clock display
+
+### Asset Files
+
+#### assets/styles/customStripeStyles.decoded.css
+Dark theme for Stripe checkout:
+- Black background overrides
+- Light text colors
+- Payment header styling
+
+#### assets/styles/settings.decoded.css
+Settings page styling:
+- Dark gradient theme
+- Responsive layouts
+- Interactive elements
+- Blur effects for sensitive data
+
+### Binary Assets (Documentation Only)
+
+#### dist/README.md
+ONNX Runtime WebAssembly files:
+- ort-wasm-simd-threaded.jsep.wasm
+- ort-wasm-simd-threaded.wasm
+
+#### models/README.md
+Machine learning models:
+- mobileone-s0.ort (image classification)
+- nms-yolov5-det.ort (object detection)
+
+#### assets/images/README.md
+Image assets documentation
+
+#### assets/sounds/README.md
+Sound assets documentation
+
+---
+
+## Script Files Analysis
 
 ### auth-service.decoded.js
 Main authentication service module providing:

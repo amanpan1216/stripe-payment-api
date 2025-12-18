@@ -1,0 +1,81 @@
+/**
+ * DECODED ANALYSIS: customStripeStyles.css
+ * 
+ * Custom CSS styles for Stripe checkout pages
+ * 
+ * PURPOSE: Overrides Stripe's default styling with dark theme
+ */
+
+/**
+ * CSS VARIABLES
+ * -------------
+ * --stripe-bg-color: #000000 (black background)
+ * --checkout-white: Set to black for dark theme
+ */
+
+/**
+ * TEXT COLOR OVERRIDES
+ * --------------------
+ * 
+ * .Text-color--gray600:
+ *   Original: Gray text
+ *   Override: hsl(0deg 28.03% 97.25% / 70%) - Light with 70% opacity
+ * 
+ * .Text-color--gray800:
+ *   Original: Darker gray text
+ *   Override: hsl(0deg 0% 100% / 90%) - White with 90% opacity
+ * 
+ * .PaymentHeader:
+ *   Override: hsl(0deg 0% 99.74% / 90%) - Near-white with 90% opacity
+ */
+
+/**
+ * LAYOUT OVERRIDES
+ * ----------------
+ * 
+ * element.style (inline styles):
+ *   - background-color: var(--stripe-bg-color) - Black
+ *   - padding: 64px 64px 40px
+ *   - height: 100%
+ *   - overflow-y: auto
+ *   - flex: 0 0 40%
+ */
+
+/**
+ * THEME CHARACTERISTICS
+ * ---------------------
+ * 
+ * 1. Dark Background:
+ *    - All backgrounds set to #000000
+ *    - Creates dark mode appearance
+ * 
+ * 2. Light Text:
+ *    - Text colors use light HSL values
+ *    - Opacity for subtle contrast
+ * 
+ * 3. Payment Header:
+ *    - Near-white color for readability
+ *    - 90% opacity for soft appearance
+ */
+
+/**
+ * CSS SPECIFICITY
+ * ---------------
+ * 
+ * Uses !important on all overrides to ensure
+ * they take precedence over Stripe's styles.
+ * 
+ * Targets specific Stripe class names:
+ * - .Text-color--gray600
+ * - .Text-color--gray800
+ * - .PaymentHeader
+ */
+
+/**
+ * PURPOSE
+ * -------
+ * This CSS file customizes the appearance of Stripe
+ * checkout pages to match the extension's dark theme
+ * aesthetic, making the payment flow visually
+ * consistent with the settings page.
+ */

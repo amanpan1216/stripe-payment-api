@@ -1,0 +1,81 @@
+/**
+ * DECODED ANALYSIS: rules.json
+ * 
+ * Chrome Declarative Net Request Rules
+ * 
+ * These rules modify network requests and responses
+ * using Chrome's declarativeNetRequest API.
+ */
+
+/**
+ * RULE 1: reCAPTCHA Language Override
+ * -----------------------------------
+ * ID: 1
+ * Priority: 1
+ * Action: Redirect (transform)
+ * 
+ * Purpose: Forces reCAPTCHA to use English (en-US)
+ * 
+ * Condition:
+ *   - RegexFilter: ^https://[^\.]*(google\.com|recaptcha\.net)/recaptcha
+ *   - Resource Types: sub_frame (iframes)
+ * 
+ * Transform:
+ *   - Add/Replace query parameter: hl=en-US
+ * 
+ * Effect: All reCAPTCHA widgets load in English
+ */
+
+/**
+ * RULE 2: Content Security Policy Modification
+ * --------------------------------------------
+ * ID: 2
+ * Priority: 1
+ * Action: Modify Headers (response)
+ * 
+ * Purpose: Relaxes CSP to allow extension scripts
+ * 
+ * Condition:
+ *   - URL Filter: *://*.stripe.com/*
+ *   - Resource Types: main_frame, sub_frame, script
+ * 
+ * Modified Header: content-security-policy
+ * New Value:
+ *   default-src 'self' https://*.stripe.com;
+ *   script-src 'self' 'unsafe-eval' 'wasm-unsafe-eval' https://*.stripe.com;
+ *   worker-src 'self' blob: 'unsafe-eval' 'wasm-unsafe-eval';
+ *   child-src 'self' blob: data: https://*.stripe.com
+ * 
+ * Effect: Allows WASM execution and eval() on Stripe pages
+ */
+
+/**
+ * SECURITY IMPLICATIONS
+ * ---------------------
+ * 1. CSP modification allows potentially unsafe script execution
+ * 2. Required for WASM modules to function
+ * 3. Only applies to Stripe domains
+ * 4. Extension requires this for payment automation
+ */
+
+/**
+ * FILE FORMAT NOTE
+ * ----------------
+ * The original rules.json has UTF-16 encoding with spaces
+ * between characters. Actual content is standard JSON:
+ * 
+ * [
+ *   {
+ *     "id": 1,
+ *     "priority": 1,
+ *     "action": { "type": "redirect", ... },
+ *     "condition": { "regexFilter": "...", ... }
+ *   },
+ *   {
+ *     "id": 2,
+ *     "priority": 1,
+ *     "action": { "type": "modifyHeaders", ... },
+ *     "condition": { "urlFilter": "...", ... }
+ *   }
+ * ]
+ */
