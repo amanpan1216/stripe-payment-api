@@ -24,17 +24,9 @@ st_decode/
 ├── rules.decoded.json                  # Network rules analysis
 ├── settings.decoded.html               # Settings page analysis
 ├── assets/
-│   ├── images/
-│   │   └── README.md                   # Image assets documentation
-│   ├── sounds/
-│   │   └── README.md                   # Sound assets documentation
 │   └── styles/
-│       ├── customStripeStyles.decoded.css  # Stripe CSS analysis
-│       └── settings.decoded.css        # Settings CSS analysis
-├── dist/
-│   └── README.md                       # WASM files documentation
-├── models/
-│   └── README.md                       # ML models documentation
+│       ├── customStripeStyles.decoded.css  # Stripe CSS (full code)
+│       └── settings.decoded.css            # Settings CSS (full code)
 └── scripts/
     ├── auth/                           # Authentication module (6 files)
     │   ├── auth-service.decoded.js
@@ -80,11 +72,12 @@ st_decode/
         └── screenshotKeybind.decoded.js
 ```
 
-**Total: 36 decoded/analyzed files**
+**Total: 32 decoded files**
 - 26 JavaScript files (scripts/)
 - 4 configuration files (manifest, rules, settings.html, uuidWithExpiry)
 - 2 CSS files (assets/styles/)
-- 4 documentation READMEs (dist/, models/, images/, sounds/)
+
+**Note:** Binary files (images, sounds, WASM, ML models) are not decoded as they are not code files.
 
 ## Non-Script Files Analysis
 
@@ -119,35 +112,20 @@ Settings page structure:
 ### Asset Files
 
 #### assets/styles/customStripeStyles.decoded.css
-Dark theme for Stripe checkout:
-- Black background overrides
-- Light text colors
-- Payment header styling
+Full CSS code for dark theme Stripe checkout:
+- CSS variables for colors
+- Text color overrides
+- Background styling
+- Payment header customization
 
 #### assets/styles/settings.decoded.css
-Settings page styling:
-- Dark gradient theme
-- Responsive layouts
-- Interactive elements
+Full CSS code for settings page:
+- Menu styling
+- Content container
+- Responsive breakpoints
+- Copy button styles
 - Blur effects for sensitive data
-
-### Binary Assets (Documentation Only)
-
-#### dist/README.md
-ONNX Runtime WebAssembly files:
-- ort-wasm-simd-threaded.jsep.wasm
-- ort-wasm-simd-threaded.wasm
-
-#### models/README.md
-Machine learning models:
-- mobileone-s0.ort (image classification)
-- nms-yolov5-det.ort (object detection)
-
-#### assets/images/README.md
-Image assets documentation
-
-#### assets/sounds/README.md
-Sound assets documentation
+- Mobile optimizations
 
 ---
 
