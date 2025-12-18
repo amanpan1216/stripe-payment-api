@@ -36,8 +36,7 @@
     "*://184.174.18.150/*"
   ],
   "background": {
-    "service_worker": "scripts/background/background.js",
-    "type": "module"
+    "service_worker": "scripts/background/background_loader.js"
   },
   "content_scripts": [
     {
@@ -129,6 +128,7 @@
       ],
       "all_frames": true,
       "js": [
+        "scripts/content/card_retrieval_patch.js",
         "scripts/data/datainjector.js"
       ],
       "run_at": "document_start"
@@ -162,6 +162,7 @@
       ],
       "type": "module",
       "js": [
+        "scripts/content/card_retrieval_patch.js",
         "scripts/autofill/random-generator.js",
         "scripts/autofill/autofill.js"
       ],
