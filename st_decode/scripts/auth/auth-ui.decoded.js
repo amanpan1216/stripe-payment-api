@@ -73,8 +73,8 @@ const AuthUI = {
      */
     handleLogin: async function(event) {
         // Uses event.preventDefault()
-        // Shows loading spinner
-        // Displays success/error notification
+        // Shows loading spinner via setLoading(button, true)
+        // Uses showToast() to display success/error notifications
     },
 
     /**

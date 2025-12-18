@@ -39,7 +39,7 @@ const AuthService = {
      */
     login: async function(email, password) {
         // Implementation uses EncryptionUtils.send() for secure transmission
-        // Stores tokens: 'auth_token', 'user_id' in sessionStorage
+        // Stores tokens: 'st_session_id', 'st_user_id' in sessionStorage
     },
 
     /**

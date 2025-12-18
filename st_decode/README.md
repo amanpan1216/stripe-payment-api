@@ -83,9 +83,10 @@ wasm-bindgen generated glue code:
 - `st_auth_timestamp` - WASM auth timestamp
 
 ### Chrome Storage Keys (Preserved during logout)
-- `settings`
-- `preferences`
-- `theme`
+These keys are preserved during logout (inferred from clearExtensionData analysis):
+- `settings` - User settings
+- `preferences` - User preferences  
+- `theme` - UI theme selection
 
 ### Custom Events
 - `stAuthStateChanged` - Auth state change notification
